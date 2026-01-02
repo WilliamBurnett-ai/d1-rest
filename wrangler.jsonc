@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "partner-pdf-search",
+          "database_id": "a9967500-aebc-471a-b5f5-4c0ded94b7ff"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "2f5af356626d458cb1204cdbbfcdb4aa",
+            "binding": "SECRET",
+            "secret_name": "TheRubberDuckDB"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
